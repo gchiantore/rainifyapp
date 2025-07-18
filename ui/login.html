@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rainify - Login</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#b1ce57',
+              text: '#565e5a',
+              graydark: '#6f7874',
+              graylight: '#eff8f7',
+              red: '#e41c19',
+            },
+            fontFamily: {
+              sans: ['Roboto', 'sans-serif'],
+            },
+          },
+        },
+      };
+    </script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <style>
+      body {
+        background: linear-gradient(to bottom, #eff8f7, #dceae2);
+      }
+    </style>
+  </head>
+
+  <body class="font-sans flex flex-col items-center justify-center text-text min-h-screen px-6">
+
+    <div class="flex flex-col items-center mb-8">
+      <i class="fas fa-tint text-5xl text-primary mb-3"></i>
+      <h1 class="text-2xl font-bold">Rainify</h1>
+      <p class="text-sm text-graydark mt-1">Bienvenido de nuevo</p>
+    </div>
+
+    <form class="w-full max-w-sm space-y-4">
+      <div>
+        <label for="email" class="block text-sm font-medium mb-1">Correo electrónico</label>
+        <input
+          id="email"
+          type="email"
+          placeholder="ejemplo@correo.com"
+          class="w-full px-4 py-2 border border-graydark rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-white"
+        />
+      </div>
+
+      <div>
+        <label for="password" class="block text-sm font-medium mb-1">Contraseña</label>
+        <input
+          id="password"
+          type="password"
+          placeholder="••••••••"
+          class="w-full px-4 py-2 border border-graydark rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-white"
+        />
+      </div>
+
+      <button type="submit" class="w-full bg-primary text-white py-2 rounded-lg font-semibold transition hover:bg-[#9fcf41]">
+        Iniciar sesión
+      </button>
+    </form>
+
+    <div class="flex justify-between items-center text-sm text-graydark mt-3 gap-2">
+        <a href="#" class="hover:underline">¿Olvidaste tu contraseña?</a>
+        <a href="#" class="text-primary font-medium hover:underline"> Registrate</a>
+      </div>
+
+  </body>
+</html>

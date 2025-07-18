@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rainify - Nuevo Spot</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#b1ce57',
+                        text: '#565e5a',
+                        graydark: '#6f7874',
+                        graylight: '#eff8f7',
+                        red: '#e41c19',
+                    },
+                    fontFamily: {
+                        sans: ['Roboto', 'sans-serif'],
+                    },
+                },
+            },
+        };
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <style>
+        body {
+            background: linear-gradient(to bottom, #eff8f7, #dceae2);
+        }
+    </style>
+</head>
+
+<body class="font-sans text-text min-h-screen px-6 py-8">
+
+    <h1 class="text-2xl font-bold mb-6 flex items-center gap-2">
+        <i class="fas fa-map-marker-alt text-primary"></i> Nuevo Spot
+    </h1>
+
+    <form class="space-y-4 max-w-sm mx-auto">
+
+        <!-- Nombre -->
+        <div>
+            <label for="nombre" class="block text-sm font-medium mb-1">Nombre del Spot</label>
+            <input id="nombre" type="text" placeholder="Ej: Estancia Los Sauces"
+                class="w-full px-4 py-2 border border-graydark rounded-lg focus:ring-2 focus:ring-primary bg-white" />
+        </div>
+
+        <!-- Ubicación -->
+        <div class="space-y-2">
+            <label class="block text-sm font-medium">Ubicación</label>
+            <button type="button"
+                class="w-full bg-graydark text-white py-2 rounded-lg text-sm hover:bg-gray-700 transition flex items-center justify-center gap-2">
+                <i class="fas fa-location-arrow"></i> Usar mi ubicación actual
+            </button>
+
+            <div class="flex gap-2">
+                <input type="text" placeholder="Latitud"
+                    class="w-1/2 px-3 py-2 border border-graydark rounded-lg bg-white" />
+                <input type="text" placeholder="Longitud"
+                    class="w-1/2 px-3 py-2 border border-graydark rounded-lg bg-white" />
+            </div>
+        </div>
+
+        <!-- Switch visibilidad -->
+        <div>
+            <label class="block text-sm font-medium mb-2">Visibilidad del Spot</label>
+            <label class="relative inline-flex items-center cursor-pointer">
+                <input type="checkbox" class="sr-only peer" />
+                <div
+                    class="w-11 h-6 bg-graydark peer-checked:bg-primary rounded-full transition-all peer-focus:ring-2 peer-focus:ring-primary">
+                </div>
+                <div
+                    class="absolute left-0.5 top-0.5 w-5 h-5 bg-white rounded-full shadow-md transition-transform peer-checked:translate-x-full">
+                </div>
+                <span class="ml-3 text-sm">Hacerlo público</span>
+            </label>
+        </div>
+
+        <!-- Botón guardar -->
+        <button type="submit"
+            class="w-full bg-primary text-white py-2 rounded-lg font-semibold transition hover:bg-[#9fcf41]">
+            Guardar Spot
+        </button>
+
+    </form>
+</body>
+
+</html>

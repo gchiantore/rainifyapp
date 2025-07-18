@@ -1,0 +1,30 @@
+/* js/layout/header.css */
+/* js/layout/header.css */
+.app-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 56px;
+    background-color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    box-shadow: var(--shadow-sm);
+  }
+  
+.header-left,
+.header-right {
+    width: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-centered {
+    height: 32px;
+    object-fit: contain;
+  }
+
+  

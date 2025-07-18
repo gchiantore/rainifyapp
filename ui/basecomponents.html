@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rainify | Componentes</title>
+    <link rel="stylesheet" href="/css/variables.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <!-- Fuente e íconos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/410f60220d.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <h1 style="margin-bottom: 1rem;">Componentes Rainify</h1>
+        </header>
+        <main id="design"></main>
+    </div>
+
+    <script type="module">
+        import { createInput } from '../js/components/input/input.component.js';
+
+        const design = document.getElementById('design');
+
+        const input1 = createInput({
+            label: 'Nombre',
+            placeholder: 'Ej: Juan Pérez',
+            name: 'nombre',
+            required: true
+        });
+
+        const input2 = createInput({
+            label: 'Email',
+            placeholder: 'ejemplo@correo.com',
+            type: 'email',
+            name: 'email',
+            required: true
+        });
+
+        const input3 = createInput({
+            label: 'Con error',
+            placeholder: 'Algo salió mal...',
+            name: 'errorTest',
+            error: 'Este campo es obligatorio'
+        });
+
+        design.appendChild(input1);
+        design.appendChild(input2);
+        design.appendChild(input3);
+
+
+        import { createButton } from '../js/components/button/button.component.js';
+
+        design.appendChild(createButton({ text: 'Guardar', variant: 'primary' }));
+        design.appendChild(createButton({ text: 'Cancelar', variant: 'secondary' }));
+        design.appendChild(createButton({ text: '', icon: 'fas fa-plus', variant: 'icon' }));
+
+        import { createSelect } from '../js/components/select/select.component.js';
+
+        const selectTest = createSelect({
+            label: 'Tipo de cultivo',
+            name: 'cultivo',
+            options: [
+                { value: '', label: 'Seleccionar' },
+                { value: 'trigo', label: 'Trigo' },
+                { value: 'maiz', label: 'Maíz' },
+                { value: 'soja', label: 'Soja' }
+            ],
+            required: true
+        });
+
+        design.appendChild(selectTest);
+
+        import { createSwitch } from '../js/components/switch/switch.component.js';
+
+        const switchTest = createSwitch({
+            label: '¿Spot público?',
+            name: 'publico',
+            checked: false,
+            onChange: checked => console.log('Público:', checked)
+        });
+        design.appendChild(switchTest);
+
+        import { createRadioGroup } from '../js/components/radio/radio.component.js';
+
+        const radioTest = createRadioGroup({
+            name: 'ubicacion',
+            selected: 'actual',
+            options: [
+                { label: 'Usar ubicación actual', value: 'actual' },
+                { label: 'Ingresar coordenadas manualmente', value: 'manual' }
+            ],
+            onChange: val => console.log('Ubicación seleccionada:', val)
+        });
+
+        design.appendChild(radioTest);
+
+        import { createDivider } from '../js/components/divider/divider.component.js';
+
+const dividerConTexto = createDivider('o continuar con');
+const dividerSimple = createDivider();
+
+design.appendChild(dividerConTexto);
+
+
+        import { createTextarea } from '../js/components/textarea/textarea.component.js';
+        import { createHelperText } from '../js/components/helper/helper.component.js';
+        const textareaTest = createTextarea({
+            label: 'Comentarios',
+            name: 'comentarios',
+            placeholder: 'Escribí tu mensaje acá...'
+        });
+        const helper = createHelperText('Podés escribir hasta 500 caracteres.', 'comentarios');
+        design.appendChild(textareaTest);
+        design.appendChild(helper);
+
+
+    </script>
+</body>
+
+</html>

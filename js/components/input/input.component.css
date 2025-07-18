@@ -1,0 +1,38 @@
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: var(--spacing-md);
+}
+
+.input-label {
+    font-size: var(--font-size-sm);
+    color: var(--color-text);
+    font-weight: 400;
+}
+
+.input-field {
+    padding: var(--spacing-sm);
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--border-radius);
+    background-color: var(--color-white);
+    font-size: var(--font-size-base);
+    font-weight: 100;
+    /* Más liviana y elegante */
+    transition: border-color 0.2s;
+}
+
+.input-field:focus {
+    border-color: var(--color-primary);
+    outline: none;
+}
+
+.input-error {
+    font-size: var(--font-size-sm);
+    color: var(--color-error);
+    font-weight: 400;
+}
+
+.input-field.error {
+    border-color: var(--color-error);
+}

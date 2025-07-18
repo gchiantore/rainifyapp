@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Viento y Racha</title>
+    <script src="https://kit.fontawesome.com/4086426c8b.js" crossorigin="anonymous"></script>
+    <style>
+        :root {
+            --verde: #b1ce57;
+            --texto: #333;
+            --texto-suave: #777;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .viento-widget {
+            background: transparent;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .brujula {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            border: 1px dashed var(--verde);
+            border-radius: 50%;
+        }
+
+        .ticks {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .tick {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform-origin: center center;
+  font-size: 0.55rem;
+  font-weight: bold;
+  color: var(--texto-suave);
+}
+
+.tick:nth-child(1)  { transform: rotate(0deg) translateY(-55px) rotate(-0deg);   }
+.tick:nth-child(2)  { transform: rotate(45deg) translateY(-50px) rotate(-45deg); }
+.tick:nth-child(3)  { transform: rotate(90deg) translateY(-48px) rotate(-90deg); }
+.tick:nth-child(4)  { transform: rotate(135deg) translateY(-47px) rotate(-135deg);}
+.tick:nth-child(5)  { transform: rotate(180deg) translateY(-45px) rotate(-180deg);}
+.tick:nth-child(6)  { transform: rotate(225deg) translateY(-52px) rotate(-225deg);}
+.tick:nth-child(7)  { transform: rotate(270deg) translateY(-53px) rotate(-270deg);}
+.tick:nth-child(8)  { transform: rotate(315deg) translateY(-58px) rotate(-315deg);}
+
+        .flecha {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(270deg);
+            /* ← CAMBIAR SEGÚN GRADOS */
+            font-size: 2.5rem;
+            color: var(--verde);
+        }
+
+        .valores-viento {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--texto-suave);
+        }
+
+        .subtexto {
+            font-size: 0.75rem;
+            color: var(--texto-suave);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="viento-widget">
+        <div class="brujula">
+            <div class="ticks">
+                <span class="tick">N</span>
+                <span class="tick">NE</span>
+                <span class="tick">E</span>
+                <span class="tick">SE</span>
+                <span class="tick">S</span>
+                <span class="tick">SO</span>
+                <span class="tick">O</span>
+                <span class="tick">NO</span>
+            </div>
+            <div class="flecha">
+                <i class="fas fa-arrow-up"></i>
+            </div>
+        </div>
+        <div class="valores-viento">10 / 17</div>
+        <div class="subtexto">km/h</div>
+    </div>
+
+</body>
+
+</html>

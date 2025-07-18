@@ -1,0 +1,98 @@
+.forecast-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 0;
+}
+
+/* Estilo base del acordeón */
+.accordion-item {
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: var(--color-bg-light, #f4f4f4);
+    border: 1px solid var(--color-border, #ddd);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Summary (parte visible del día) */
+.accordion-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 1rem;
+    font-weight: 600;
+    background-color: var(--color-bg-accent, #eff8f7);
+    color: var(--color-text, #333);
+    transition: background 0.3s;
+}
+
+.accordion-summary:hover {
+    background-color: var(--color-primary-light, #dff3d6);
+}
+
+/* Detalles por hora */
+.hourly-list {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 1rem 1rem 1rem;
+    background-color: white;
+    border-top: 1px solid #eee;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.hour-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.4rem 0;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #eee;
+    gap: 0.5rem;
+}
+
+.hour-row:last-child {
+    border-bottom: none;
+}
+
+/* Estilos específicos */
+.weather-icon-small,
+.weather-icon-sm {
+    font-size: 1rem;
+    color: var(--color-primary, #b1ce57);
+    min-width: 1.2rem;
+    text-align: center;
+}
+
+.day-name {
+    flex: 1;
+}
+
+.day-temp,
+.rain-total {
+    min-width: 80px;
+    text-align: right;
+    font-size: 0.9rem;
+    color: var(--color-gray-dark, #555);
+}
+
+/* Animación */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hour-row {
+    cursor: pointer;
+  }
+  
+  .hour-row:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }

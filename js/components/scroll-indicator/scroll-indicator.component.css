@@ -1,0 +1,113 @@
+.scroll-indicator {
+    background-color: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-light);
+    opacity: 0.6;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+/* Tamaños */
+.size-sm {
+    width: 28px;
+    height: 28px;
+    font-size: 0.75rem;
+}
+
+.size-md {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+}
+
+.size-lg {
+    width: 56px;
+    height: 56px;
+    font-size: 1.25rem;
+}
+
+/* Animaciones por dirección */
+.scroll-up {
+    animation-name: scrollBounceUp;
+}
+
+.scroll-down {
+    animation-name: scrollBounceDown;
+}
+
+.scroll-left {
+    animation-name: scrollBounceLeft;
+}
+
+.scroll-right {
+    animation-name: scrollBounceRight;
+}
+
+/* Keyframes */
+@keyframes scrollBounceUp {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+@keyframes scrollBounceDown {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(6px);
+    }
+}
+
+@keyframes scrollBounceLeft {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(-6px);
+    }
+}
+
+@keyframes scrollBounceRight {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(6px);
+    }
+}
+
+.scroll-left {
+    position: absolute;
+    left: 0.4rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .scroll-right {
+    position: absolute;
+    right: 0.4rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  

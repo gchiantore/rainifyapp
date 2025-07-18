@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rainify | Componentes</title>
+    <link rel="stylesheet" href="/css/variables.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <!-- Fuente e íconos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/410f60220d.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <h1 style="margin-bottom: 1rem;">Componentes Rainify</h1>
+        </header>
+        <main id="design"></main>
+    </div>
+
+    <script type="module">
+        import { createBadge } from '../js/components/badge/badge.component.js';
+
+        const design = document.getElementById('design');
+
+        const badges = [
+            { icon: 'fa-solid fa-triangle-exclamation', text: 'Hola Mundo', variant: 'success' },
+            { text: 'Privado', variant: 'default' },
+            { text: 'Error', variant: 'error' },
+            { icon: 'fa-solid fa-triangle-exclamation', variant: 'warning' },
+            { text: 'Info', variant: 'info' }
+        ];
+
+        badges.forEach(b => {
+            const badge = createBadge(b);
+            badge.style.marginRight = '8px';
+            design.appendChild(badge);
+        });
+
+
+        import { createLoader } from '../js/components/loader/loader.component.js';
+
+        const loaderSm = createLoader({ size: 'sm' });
+        const loaderMd = createLoader({ size: 'md' });
+        const loaderLg = createLoader({ size: 'lg' });
+
+        design.appendChild(loaderSm);
+        design.appendChild(document.createTextNode(' ← loader-sm'));
+        design.appendChild(document.createElement('br'));
+
+        design.appendChild(loaderMd);
+        design.appendChild(document.createTextNode(' ← loader-md'));
+        design.appendChild(document.createElement('br'));
+
+        design.appendChild(loaderLg);
+        design.appendChild(document.createTextNode(' ← loader-lg'));
+
+
+        const normalLoader = createLoader({ size: 'md' });
+        design.appendChild(normalLoader);
+
+        // Esperá 2 segundos y mostrás el loader full screen
+        setTimeout(() => {
+            const fullLoader = createLoader({ size: 'lg', fullscreen: true });
+            document.body.appendChild(fullLoader);
+
+            // Ocultamos el loader después de 3 segundos
+            setTimeout(() => {
+                fullLoader.remove();
+            }, 3000);
+        }, 1000);
+
+
+        import { createKpi } from '../js/components/kpi/kpi.component.js';
+
+
+        // Ejemplo 1: KPI con ícono
+        const kpiDocs = createKpi({
+            label: 'Documentos',
+            value: 128,
+            icon: 'fas fa-file-alt'
+        });
+        design.appendChild(kpiDocs);
+
+        // Ejemplo 2: KPI sin ícono
+        const kpiCreditos = createKpi({
+            label: 'Créditos',
+            value: 240
+        });
+        design.appendChild(kpiCreditos);
+
+        // Ejemplo 3: KPI con otro ícono
+        const kpiImpacto = createKpi({
+            label: 'Árboles salvados',
+            value: 6,
+            icon: 'fas fa-tree'
+        });
+        design.appendChild(kpiImpacto);
+
+
+
+        import { createAvatar } from '../js/components/avatar/avatar.component.js';
+
+        const avatar = createAvatar({
+            size: 'md',
+            initials: 'GC',
+            icon: 'check'
+        });
+
+        document.getElementById('design').appendChild(avatar);
+
+        import { createEmptyState } from '../js/components/emptystate/emptystate.component.js';
+
+        const empty = createEmptyState({
+            icon: 'cloud-upload-alt',
+            title: 'Todavía no hay spots',
+            subtitle: 'Cargá tu primer spot y empezá a compartir datos de lluvia.',
+            actionText: 'Agregar spot',
+            onAction: () => alert('Abrir modal de nuevo spot')
+        });
+
+        design.appendChild(empty);
+
+
+        import { createModal } from '../js/components/modal/modal.component.js';
+        import { createInput } from '../js/components/input/input.component.js';
+        import { createButton } from '../js/components/button/button.component.js';
+
+        const form = document.createElement('form');
+        form.appendChild(createInput({ label: 'Nombre', name: 'nombre' }));
+        form.appendChild(createInput({ label: 'Email', name: 'email' }));
+
+        const aceptarBtn = createButton({
+            text: 'Aceptar',
+            onClick: () => {
+                console.log('Aceptar clickeado');
+                modal.close();
+            }
+        });
+
+        const cancelarBtn = createButton({
+            text: 'Cancelar',
+            onClick: () => modal.close()
+        });
+
+        const modal = createModal({
+            title: 'Formulario de contacto',
+            content: form,
+            footerButtons: [cancelarBtn, aceptarBtn]
+        });
+
+        const abrir = createButton({
+            text: 'Abrir modal',
+            onClick: () => modal.open()
+        });
+
+        design.appendChild(abrir);
+
+
+        import { createCard } from '../js/components/card/card.component.js';
+
+const footer = document.createElement('div');
+footer.appendChild(createButton({ text: 'Aceptar', type: 'primary' }));
+footer.appendChild(createButton({ text: 'Cancelar', type: 'secondary' }));
+
+const card = createCard({
+  image: '/assets/img/user.jpg',
+  title: 'Nombre del usuario',
+  subtitle: 'Administrador',
+  body: 'Este usuario puede hacer de todo.',
+  footer
+});
+
+document.getElementById('design').appendChild(card);
+
+
+import { createTable } from '../js/components/table/table.component.js';
+
+
+const table = createTable({
+  columns: [
+    { key: 'nombre', label: 'Nombre', align: 'left' },
+    { key: 'zona', label: 'Zona', align: 'center' },
+    { key: 'mm', label: 'Lluvia (mm)', align: 'right' }
+  ],
+  data: [
+    { nombre: 'El Sauce', zona: 'Este', mm: 18.5 },
+    { nombre: 'La Colmena', zona: 'Oeste', mm: 22.3 },
+    { nombre: 'Los Álamos', zona: 'Norte', mm: 15.0 }
+  ],
+  renderActions: row => {
+    const btn = createButton({
+      icon: 'fa-solid fa-eye',
+      variant: 'gosth',
+      onClick: () => alert(`Ver spot: ${row.nombre}`)
+    });
+    return btn;
+  }
+});
+
+document.getElementById('design').appendChild(table);
+
+
+import { createAccordion } from '../js/components/accordion/accordion.component.js';
+
+const contenido = document.createElement('div');
+contenido.innerHTML = `<p>Este es el contenido del acordeón. Podés poner formularios, listas, tablas o lo que necesites.</p>`;
+
+const acordeon = createAccordion({
+  title: 'Ver más detalles',
+  content: contenido,
+  open: false
+});
+
+document.getElementById('design').appendChild(acordeon);
+</script>
+    </script>
+</body>
+
+</html>

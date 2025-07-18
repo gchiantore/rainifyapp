@@ -1,0 +1,38 @@
+/* js/layout/nav.css */
+.app-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background-color: var(--color-text);
+    /* gris oscuro */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1000;
+}
+
+.nav-item {
+    color: var(--color-text-light);
+  text-decoration: none;
+  font-size: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  transition: color 0.3s ease;
+}
+
+.nav-item.active {
+    color: var(--color-primary);
+    /* verde para activo */
+}
+
+.nav-item:hover {
+    color: var(--color-primary-dark);
+}
+
+.nav-label {
+    font-size: 0.7rem;
+  }

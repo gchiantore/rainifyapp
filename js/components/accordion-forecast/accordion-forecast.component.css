@@ -1,0 +1,28 @@
+.day-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: var(--font-size-base);
+}
+
+.day-name {
+    font-weight: 600;
+    color: var(--color-text);
+    min-width: 80px;
+}
+
+.weather-icon {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+}
+
+.temps {
+    font-weight: 500;
+    color: var(--color-text-light);
+}
+
+.rain {
+    font-size: 0.9rem;
+    color: var(--color-primary-dark);
+}

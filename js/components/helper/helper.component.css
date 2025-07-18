@@ -1,0 +1,10 @@
+/* js/components/helpertext/helpertext.component.css */
+
+.helper-text {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-light);
+    margin-top: var(--spacing-xs);
+    transition: opacity 0.2s ease;
+    opacity: 1;
+  }
+  

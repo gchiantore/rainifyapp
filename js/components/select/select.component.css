@@ -1,0 +1,31 @@
+.select-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: var(--spacing-md);
+}
+
+.select-label {
+    font-size: var(--font-size-sm);
+    color: var(--color-text);
+    font-weight: 400;
+}
+
+.select-field {
+    padding: var(--spacing-sm);
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--border-radius);
+    background-color: var(--color-white);
+    font-size: var(--font-size-base);
+    font-weight: 300;
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg fill="%23666" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 1rem;
+}
+
+.select-field:focus {
+    border-color: var(--color-primary);
+    outline: none;
+}

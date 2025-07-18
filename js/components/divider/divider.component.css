@@ -1,0 +1,19 @@
+.divider-wrapper {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin: var(--spacing-md) 0;
+}
+
+.divider-line {
+    flex-grow: 1;
+    border: none;
+    height: 1px;
+    background-color: var(--color-border);
+}
+
+.divider-text {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-light);
+    white-space: nowrap;
+}

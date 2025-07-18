@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Rainify Mobile Test</title>
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <style>
+    body {
+      background: var(--graylight, #eff8f7);
+      margin: 0;
+      padding: var(--safe-top, 1rem) var(--safe-right, 1rem) var(--safe-bottom, 1rem) var(--safe-left, 1rem);
+      font-family: 'Roboto', sans-serif;
+    }
+    .test-header {
+      background-color: var(--color-primary, #b1ce57);
+      padding: 1rem;
+      border-radius: 1rem;
+      text-align: center;
+      font-weight: bold;
+    }
+    .test-card {
+      background: white;
+      border-radius: 1rem;
+      margin: 1rem 0;
+      padding: 1rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .test-footer {
+      margin-top: 4rem;
+      font-size: 0.8rem;
+      color: gray;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="test-header">Test Mobile Layout</div>
+  <div class="test-card">🌦️ Card con contenido</div>
+  <div class="test-card">📱 Safe Area aplicada</div>
+  <div class="test-card">📊 Test de scroll <br/><br/> <div style="height: 400px; background: #ddd; border-radius: 1rem;"></div></div>
+  <div class="test-footer">Rainify — Edge Case Tester</div>
+</body>
+</html>

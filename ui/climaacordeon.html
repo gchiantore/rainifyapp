@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rainify | Componentes</title>
+    <link rel="stylesheet" href="/css/variables.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <!-- Fuente e íconos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/410f60220d.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <h1 style="margin-bottom: 1rem;">Componentes Rainify</h1>
+        </header>
+        <main id="design"></main>
+    </div>
+
+    <script type="module">
+        import { renderForecastAccordion } from '../js/components/accordion-forecast/accordion-forecast.component.js';
+
+        const container = document.getElementById('design'); // o cualquier otro
+        renderForecastAccordion(container);
+
+        import { createScrollIndicator } from '../js/components/scroll-indicator/scroll-indicator.component.js';
+
+const design = document.getElementById('design');
+
+const arrows = [
+  { direction: 'up', size: 'sm' },
+  { direction: 'down', size: 'md' },
+  { direction: 'left', size: 'lg' },
+  { direction: 'right', size: 'md' }
+];
+
+arrows.forEach(opts => {
+  const arrow = createScrollIndicator(opts);
+  design.appendChild(arrow);
+});
+    </script>
+</body>
+
+</html>

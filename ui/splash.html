@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rainify - Splash</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#b1ce57',
+              text: '#565e5a',
+              graylight: '#eff8f7',
+            },
+            fontFamily: {
+              sans: ['Roboto', 'sans-serif'],
+            },
+          },
+        },
+      };
+    </script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <style>
+      body {
+        background: linear-gradient(to bottom, #eff8f7, #dceae2);
+      }
+
+      .fade-in {
+        animation: fadeIn 1.4s ease-in-out both;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: scale(0.95);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+    </style>
+  </head>
+
+  <body class="font-sans flex flex-col items-center justify-center text-text h-screen">
+
+    <div class="flex flex-col items-center fade-in">
+        <img src="assets/img/rainify-logo-color-vertical.png" alt="Rainify" class="h-10 object-contain" />
+      <p class="text-sm text-gray-600 mt-2">Lluvia que cuenta, tierra que espera.</p>
+    </div>
+  </body>
+</html>

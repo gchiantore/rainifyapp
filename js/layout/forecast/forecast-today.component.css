@@ -1,0 +1,109 @@
+.forecast-today {
+  background: white;
+  border-radius: 1rem;
+  padding: 1.2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.today-now {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.weather-icon {
+  font-size: 2.5rem;
+  color: var(--color-primary, #b1ce57);
+}
+
+.temp-now {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: var(--color-text);
+}
+
+.state-now {
+  font-size: 1rem;
+  color: #666;
+}
+
+.extra-info {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: #999;
+}
+
+.hours-scroll {
+  flex: 1;
+  display: flex;
+  overflow-x: auto;
+  gap: 0.8rem;
+  padding-bottom: 0.4rem;
+  scroll-behavior: smooth;
+}
+
+
+.hour-box {
+  min-width: 60px;
+  background: #f4f7f6;
+  border-radius: 0.7rem;
+  padding: 0.4rem;
+  text-align: center;
+  font-size: 0.75rem;
+  flex-shrink: 0;
+}
+
+.weather-icon-small {
+  font-size: 1.2rem;
+  color: var(--color-primary);
+}
+
+
+.hours-scroll-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+
+.hours-scroll-wrapper .scroll-left,
+.hours-scroll-wrapper .scroll-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.hours-scroll-wrapper .scroll-indicator {
+  position: absolute;
+  inset-block: 0;
+  margin-block: auto;
+  z-index: 2;
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-indicator.hidden {
+  display: none;
+}
+
+/* Asegura posicionamiento horizontal correcto */
+.hours-scroll-wrapper .scroll-left {
+  left: -0.4rem;
+}
+
+.hours-scroll-wrapper .scroll-right {
+  right: -0.4rem;
+}

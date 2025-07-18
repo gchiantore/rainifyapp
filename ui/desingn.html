@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rainify - Visual Kit</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#b1ce57',
+              text: '#565e5a',
+              graydark: '#6f7874',
+              graylight: '#eff8f7',
+              red: '#e41c19',
+            },
+            fontFamily: {
+              sans: ['Roboto', 'sans-serif'],
+            },
+            borderRadius: {
+              xl: '1rem',
+            },
+          },
+        },
+      };
+    </script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      body {
+        background: linear-gradient(to bottom, #eff8f7, #d7e0dc);
+      }
+    </style>
+  </head>
+
+  <body class="font-sans text-text p-4 space-y-6 max-w-sm mx-auto">
+
+    <!-- HEADER -->
+    <header class="bg-primary text-white flex items-center justify-center py-4 rounded-xl shadow">
+      <i class="fas fa-tint text-2xl mr-2"></i>
+      <h1 class="text-2xl font-bold tracking-wide">Rainify</h1>
+    </header>
+
+    <!-- TIPOGRAFÍA -->
+    <section>
+      <h2 class="text-lg font-bold mb-2">Tipografía y colores</h2>
+      <p class="text-text">Texto normal</p>
+      <p class="text-graydark">Texto gris oscuro</p>
+      <p class="text-primary font-semibold">Texto verde primario</p>
+      <p class="text-red">Texto rojo</p>
+    </section>
+
+    <!-- CARDS -->
+    <section>
+      <h2 class="text-lg font-bold mb-2">Cards</h2>
+
+      <div class="bg-white rounded-xl shadow-md p-4 space-y-1">
+        <h3 class="font-semibold text-sm">Montevideo</h3>
+        <p class="text-lg font-bold">20 mm</p>
+        <p class="text-xs text-graydark">Lluvia moderada</p>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-md p-4 space-y-1 mt-4">
+        <h3 class="font-semibold text-sm">Spot propio</h3>
+        <p class="text-lg font-bold text-primary">32 mm</p>
+        <p class="text-xs text-graydark">Pública</p>
+      </div>
+    </section>
+
+    <!-- BOTONES -->
+    <section>
+      <h2 class="text-lg font-bold mb-2">Botones</h2>
+      <button class="bg-primary text-white font-semibold py-2 px-4 rounded-lg w-full mb-2 transition hover:bg-[#9fcf41]">
+        Botón Primario
+      </button>
+      <button class="border border-graydark text-text py-2 px-4 rounded-lg w-full hover:bg-graylight transition">
+        Botón Secundario
+      </button>
+    </section>
+
+
+    <!-- FORMULARIOS -->
+<section>
+    <h2 class="text-lg font-bold mb-2">Inputs y formularios</h2>
+  
+    <!-- Input de texto -->
+    <div class="mb-4">
+      <label class="block text-sm font-medium mb-1" for="nombre">Nombre</label>
+      <input id="nombre" type="text" placeholder="Ej: Mi Spot" class="w-full px-3 py-2 rounded-md border border-graydark bg-white focus:outline-none focus:ring-2 focus:ring-primary" />
+    </div>
+  
+    <!-- Textarea -->
+    <div class="mb-4">
+      <label class="block text-sm font-medium mb-1" for="comentario">Comentario</label>
+      <textarea id="comentario" rows="3" placeholder="Opcional..." class="w-full px-3 py-2 rounded-md border border-graydark bg-white focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+    </div>
+  
+    <!-- Select -->
+    <div class="mb-4">
+      <label class="block text-sm font-medium mb-1" for="categoria">Categoría</label>
+      <select id="categoria" class="w-full px-3 py-2 rounded-md border border-graydark bg-white focus:outline-none focus:ring-2 focus:ring-primary">
+        <option value="">Seleccionar</option>
+        <option value="lluvia">Lluvia</option>
+        <option value="granizo">Granizo</option>
+      </select>
+    </div>
+  
+    <!-- Checkboxes -->
+    <div class="mb-4">
+      <label class="block text-sm font-medium mb-2">Preferencias</label>
+      <label class="flex items-center gap-2 mb-1">
+        <input type="checkbox" class="accent-primary" />
+        Mostrar como público
+      </label>
+      <label class="flex items-center gap-2">
+        <input type="checkbox" class="accent-primary" />
+        Agregar al pronóstico
+      </label>
+    </div>
+  
+    <!-- Radio buttons -->
+    <div class="mb-4">
+      <label class="block text-sm font-medium mb-2">Tipo de spot</label>
+      <label class="flex items-center gap-2 mb-1">
+        <input type="radio" name="tipo" class="accent-primary" checked />
+        Propio
+      </label>
+      <label class="flex items-center gap-2">
+        <input type="radio" name="tipo" class="accent-primary" />
+        Público
+      </label>
+    </div>
+  
+    <!-- Switch real con círculo -->
+<div class="mb-4">
+    <label class="block text-sm font-medium mb-2">Activar notificaciones</label>
+    <label class="inline-flex relative items-center cursor-pointer">
+      <input type="checkbox" value="" class="sr-only peer">
+      <div class="w-11 h-6 bg-graydark rounded-full peer peer-checked:bg-primary transition-colors"></div>
+      <div class="absolute left-0.5 top-0.5 w-5 h-5 bg-white rounded-full shadow-md transition-transform peer-checked:translate-x-full"></div>
+      <span class="ml-3 text-sm">Sí, quiero recibir alertas</span>
+    </label>
+  </div>
+
+    <!-- NAV -->
+    <section>
+      <h2 class="text-lg font-bold mb-2">Nav</h2>
+      <nav class="bg-text rounded-xl shadow-md px-3 py-3">
+        <div class="flex justify-around items-center">
+          <button class="flex flex-col items-center text-xs gap-1 text-primary">
+            <i class="fas fa-home text-lg"></i>
+            Inicio
+          </button>
+          <button class="flex flex-col items-center text-xs gap-1 text-graylight">
+            <i class="fas fa-map-marker-alt text-lg"></i>
+            Mapa
+          </button>
+          <button class="flex flex-col items-center text-xs gap-1 text-graylight">
+            <i class="fas fa-chart-bar text-lg"></i>
+            Stats
+          </button>
+          <button class="flex flex-col items-center text-xs gap-1 text-graylight">
+            <i class="fas fa-cloud-sun text-lg"></i>
+            Clima
+          </button>
+        </div>
+      </nav>
+    </section>
+  </body>
+</html>

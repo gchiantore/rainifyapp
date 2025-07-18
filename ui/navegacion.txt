@@ -1,0 +1,35 @@
+📍 PANTALLA INICIAL
+└── Splash (logo + animación rápida) 
+    ↓
+🏠 Home (Pronóstico actual por ubicación)
+    ├── Mapa de Lluvias Públicas
+    ├── Agregar ciudad favorita 🔒
+    ├── Ver ciudades favoritas 🔒
+    ├── Agregar spot de lluvia 🔒
+    ├── Ver mis spots 🔒
+    ├── Cargar lluvia en spot 🔒
+    ├── Ver lluvias de otros spots públicos
+    ├── Ver estadísticas 🔒
+    └── Acceso a Menú lateral
+
+📋 Menú lateral (siempre visible luego del Splash)
+    ├── 🌦 Pronóstico actual
+    ├── 🗺️ Mapa de Lluvias Públicas
+    ├── 📌 Mis Spots de Lluvia 🔒
+    ├── 🌍 Mis Ciudades 🔒
+    ├── 📈 Estadísticas 🔒
+    ├── 👤 Perfil de Usuario 🔒
+    ├── ⚙️ Configuración
+    └── 🔐 Login / Register / Logout
+
+🔐 Login / Register (aparece solo cuando se requiere sesión)
+    └── Luego redirige a donde se quería ir (guardado en el intento)
+
+🧱 Pantallas Secundarias
+    ├── Agregar Ciudad Favorita
+    ├── Agregar Spot (con ubicación en mapa o coordenadas)
+    ├── Registrar Lluvia (selección de spot + mm caídos)
+    ├── Ver lluvia histórica (timeline por día/mes)
+    ├── Estadísticas visuales (totales, promedios, etc.)
+    ├── Perfil de usuario (nombre, email, avatar, etc.)
+    └── Configuración (tema, idioma, unidades, etc.)

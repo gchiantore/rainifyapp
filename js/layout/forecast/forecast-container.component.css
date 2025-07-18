@@ -1,0 +1,18 @@
+.forecast-container {
+    width: 100%;
+    min-height: 100vh;
+    padding: env(safe-area-inset-top) 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background-color: var(--bg-main, #eff8f7);
+    box-sizing: border-box;
+}
+
+.forecast-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 0.5rem;
+    color: var(--color-text, #565e5a);
+}
