@@ -43,13 +43,23 @@
 
 .hour-row {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 0.4rem 0;
-    font-size: 0.9rem;
-    border-bottom: 1px solid #eee;
+    justify-content: space-between;
     gap: 0.5rem;
+    padding: 0.6rem 1rem;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.9rem;
+    flex-wrap: nowrap;
+    /* Esto es CLAVE */
+    overflow-x: auto;
+    /* Para evitar quiebre */
 }
+
+.hour-row>* {
+    flex-shrink: 0;
+    /* Que no se achiquen */
+}
+
 
 .hour-row:last-child {
     border-bottom: none;
@@ -61,6 +71,7 @@
     font-size: 1rem;
     color: var(--color-primary, #b1ce57);
     min-width: 1.2rem;
+    flex-shrink: 0;
     text-align: center;
 }
 
@@ -91,8 +102,21 @@
 
 .hour-row {
     cursor: pointer;
-  }
-  
-  .hour-row:hover {
+}
+
+.hour-row:hover {
     background-color: rgba(0, 0, 0, 0.05);
-  }
+}
+
+@media (max-width: 360px) {
+    .hour-row {
+        overflow-x: auto;
+        scrollbar-width: none;
+        /* Firefox */
+    }
+
+    .hour-row::-webkit-scrollbar {
+        display: none;
+        /* Chrome */
+    }
+}
