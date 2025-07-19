@@ -76,7 +76,7 @@ export function createWindDirection({ viento, racha, grados }) {
         <span class="tick">NO</span>
       </div>
       <div class="flecha ${claseRotacion}" style="transform: translate(-50%, -50%)">
-        <i class="fas fa-arrow-up"></i>
+        <i class="fas fa-solid fa-location-arrow-up"></i>
       </div>
     </div>
     <div class="valores-viento">${parseFloat(viento).toFixed(1)} / ${parseFloat(racha).toFixed(1)}</div>
