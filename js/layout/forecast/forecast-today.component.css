@@ -45,6 +45,8 @@
   gap: 0.8rem;
   padding-bottom: 0.4rem;
   scroll-behavior: smooth;
+  justify-content: center;
+  scroll-snap-type: x mandatory;
 }
 
 
@@ -68,6 +70,8 @@
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
 }
 
 
@@ -106,4 +110,10 @@
 
 .hours-scroll-wrapper .scroll-right {
   right: -0.4rem;
+}
+
+@media (min-width: 768px) {
+  .hours-scroll {
+    justify-content: center;
+  }
 }
