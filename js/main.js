@@ -11,6 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
   renderSplash(document.body, () => {
     renderHeader(headerContainer);
     renderNav(navContainer);
-    loadView('home');
+    //loadView('home');
   });
 });  
